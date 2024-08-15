@@ -83,9 +83,10 @@ class RectorCommand extends BaseCommand
 
         $cmdPath = ROOT . '/vendor/bin/rector process';
         $command = sprintf(
-            '%s %s --autoload-file=%s --config=%s %s --clear-cache',
+            '%s %s %s --autoload-file=%s --config=%s %s --clear-cache',
             $cmdPath,
             $args->getOption('dry-run') ? '--dry-run' : '',
+            $args->getOption('verbose') ? '-vvvv' : '',
             escapeshellarg($autoload),
             escapeshellarg($config),
             escapeshellarg($path)
@@ -194,7 +195,7 @@ class RectorCommand extends BaseCommand
             ])
             ->addOption('rules', [
                 'help' => 'The rector ruleset to run',
-                'default' => 'cakephp40',
+                'default' => 'cakephp50',
             ])
             ->addOption('autoload', [
                 'help' => 'The path to the application/plugin autoload if one cannot be auto-detected, ' .
