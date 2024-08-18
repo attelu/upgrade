@@ -60,7 +60,8 @@ class RectorCommandTest extends TestCase
     public function testApplyAppDir()
     {
         $this->setupTestApp(__FUNCTION__);
-        $this->exec('upgrade rector --dry-run ' . TEST_APP);
+        $this->exec('upgrade rector --rules cakephp40 --dry-run ' . TEST_APP);
+        debug($this->_out->messages());
 
         $this->assertExitSuccess();
         $this->assertOutputContains('HelloCommand.php');
