@@ -75,6 +75,11 @@ final class CakePHPSetList implements SetListInterface
     /**
      * @var string
      */
+    public const CAKEPHP_51 = __DIR__ . '/../../../config/rector/sets/cakephp51.php';
+
+    /**
+     * @var string
+     */
     public const CHRONOS_3 = __DIR__ . '/../../../config/rector/sets/chronos3.php';
 
     /**
