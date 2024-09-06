@@ -7,6 +7,7 @@ class QueryUpgrade {
 
         $query = $articles->find('all', conditions: ['Articles.slug' => 'test']);
         $query->find('list', fields: ['id', 'title'])
+            ->groupBy('title')
             ->orderBy('id')
             ->orderByAsc('id')
             ->orderByDesc('id');
@@ -14,7 +15,8 @@ class QueryUpgrade {
         $articles->query()
             ->orderBy('id')
             ->orderByAsc('id')
-            ->orderByDesc('id');
+            ->orderByDesc('id')
+            ->groupBy('title');
 
         $article = $articles->get(1, cacheKey: 'cache-key', contain: ['Users']);
     }

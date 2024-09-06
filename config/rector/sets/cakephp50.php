@@ -105,6 +105,8 @@ return static function (RectorConfig $rectorConfig): void {
     ]);
 
     $rectorConfig->ruleWithConfiguration(RenameMethodRector::class, [
+        new MethodCallRename('Cake\Database\Query\SelectQuery', 'group', 'groupBy'),
+        new MethodCallRename('Cake\Database\Query', 'group', 'groupBy'),
         new MethodCallRename('Cake\Database\Query', 'order', 'orderBy'),
         new MethodCallRename('Cake\Database\Query', 'orderAsc', 'orderByAsc'),
         new MethodCallRename('Cake\Database\Query', 'orderDesc', 'orderByDesc'),
