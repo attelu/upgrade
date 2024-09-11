@@ -4,7 +4,22 @@
 
     <rule ref="CakePHP"/>
 
-    <exclude-pattern>src/Rector</exclude-pattern>
     <exclude-pattern>tests/test_apps</exclude-pattern>
     <exclude-pattern>tests/TestCase/Rector</exclude-pattern>
+
+    <rule ref="CakePHP.Commenting.FunctionComment.Missing">
+        <severity>0</severity>
+    </rule>
+    <rule ref="CakePHP.Commenting.FunctionComment.MissingParamTag">
+        <severity>0</severity>
+    </rule>
+    <rule ref="CakePHP.Commenting.FunctionComment.MissingReturn">
+        <severity>0</severity>
+    </rule>
+    <rule ref="CakePHP.Commenting.FunctionComment.MissingParamComment">
+        <severity>0</severity>
+    </rule>
+    <rule ref="CakePHP.Commenting.FunctionComment.MissingParamComment">
+        <severity>0</severity>
+    </rule>
 </ruleset>
